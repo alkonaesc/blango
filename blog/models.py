@@ -3,7 +3,7 @@ from django.conf import settings
 
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
-
+from django.contrib.contenttypes.fields import GenericRelation
 
 class Comment(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -35,5 +35,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
 
 
